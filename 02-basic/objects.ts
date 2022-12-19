@@ -12,23 +12,50 @@
 //   return { name: "reactjs", price: 399 };
 // }
 
+// type User = {
+//   name: string;
+//   email: string;
+//   isActive: boolean;
+// };
+
+// // type myString = string;
+// function createUser(user: User): User {
+//   return { name: user.name, email: user.email, isActive: user.isActive };
+// }
+
+// let newUser = createUser({ name: "mark", email: "x@y.com", isActive: true });
+// console.log(newUser);
+
+// type Point = { x: number; y: number };
+// function printCoord(pt: Point) {
+//   console.log(`the coordinates's x value is ${pt.x}, y value is ${pt.y}`);
+// }
+// printCoord({ x: 200, y: 100 });
+
 type User = {
+  readonly _id: string;
   name: string;
   email: string;
   isActive: boolean;
+  creditcardDetails?: cardDetails;
 };
 
-// type myString = string;
-function createUser(user: User): User {
-  return { name: user.name, email: user.email, isActive: user.isActive };
-}
+let myUser: User = {
+  _id: "1234",
+  name: "h",
+  email: "h@example.com",
+  isActive: false,
+};
 
-let newUser = createUser({ name: "mark", email: "x@y.com", isActive: true });
-console.log(newUser);
+type cardDate = {
+  cardDate: number;
+};
+type cardNumber = {
+  cardNumber: number;
+};
+type cardDetails = cardNumber & cardDate & { cvv: number };
 
-type Point = { x: number; y: number };
-function printCoord(pt: Point) {
-  console.log(`the coordinates's x value is ${pt.x}, y value is ${pt.y}`);
-}
-printCoord({ x: 200, y: 100 });
+myUser.email = "h@h.com";
+// myUser._id = "12345"; cannot edited
+
 export {};
