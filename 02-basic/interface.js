@@ -4,6 +4,7 @@ var mark = {
     dbId: 22,
     email: "mark@example.com",
     userId: 123,
+    role: "admin",
     startTrail: function () {
         return "trail started";
         // return 2;
