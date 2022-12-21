@@ -13,3 +13,31 @@ function provideId(id: string | number) {
   }
   //   return id.toLowerCase(); wont work
 }
+
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+
+function move(animal: Fish | Bird) {
+  if ("swim" in animal) {
+    return animal.swim();
+  }
+  return animal.fly();
+}
+
+interface User {
+  name: string;
+  email: string;
+}
+
+interface Admin {
+  name: string;
+  email: string;
+  isAdmin: boolean;
+}
+
+function isAdminAccount(account: User | Admin) {
+  if ("isAdmin" in account) {
+    return account.isAdmin;
+  }
+  return false;
+}

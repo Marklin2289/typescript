@@ -13,3 +13,15 @@ function provideId(id) {
     }
     //   return id.toLowerCase(); wont work
 }
+function move(animal) {
+    if ("swim" in animal) {
+        return animal.swim();
+    }
+    return animal.fly();
+}
+function isAdminAccount(account) {
+    if ("isAdmin" in account) {
+        return account.isAdmin;
+    }
+    return false;
+}
