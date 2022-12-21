@@ -22,4 +22,19 @@ interface Bottle {
   type: number;
 }
 
-identityFour<Bottle>({});
+identityFour<Bottle>({
+  brand: "Nike",
+  type: 321,
+});
+
+function getSearchProducts<T>(products: T[]): T {
+  // do some database operations
+  const myIndex = 3;
+  return products[myIndex]; // means one of the product from array
+}
+
+const getMoreSearchProducts = <T>(products: T[]): T => {
+  // do some database operations
+  const myIndex = 4;
+  return products[myIndex];
+};

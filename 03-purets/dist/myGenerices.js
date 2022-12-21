@@ -14,4 +14,17 @@ function identityThree(val) {
 function identityFour(val) {
     return val;
 }
-identityFour({});
+identityFour({
+    brand: "Nike",
+    type: 321,
+});
+function getSearchProducts(products) {
+    // do some database operations
+    const myIndex = 3;
+    return products[myIndex]; // means one of the product from array
+}
+const getMoreSearchProducts = (products) => {
+    // do some database operations
+    const myIndex = 4;
+    return products[myIndex];
+};
