@@ -25,3 +25,24 @@ function isAdminAccount(account) {
     }
     return false;
 }
+function logValue(value) {
+    if (value instanceof Date) {
+        console.log(value.toUTCString());
+    }
+    else {
+        console.log(value.toUpperCase());
+    }
+}
+// type Fish = { swim: () => void };
+// type Bird = { fly: () => void };
+function isFish(pet) {
+    return pet.swim !== undefined;
+}
+function getFood(pet) {
+    if (isFish(pet)) {
+        pet;
+        return "fish food";
+    }
+    pet;
+    return "bird food";
+}

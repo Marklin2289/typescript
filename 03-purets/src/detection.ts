@@ -41,3 +41,26 @@ function isAdminAccount(account: User | Admin) {
   }
   return false;
 }
+
+function logValue(value: Date | string) {
+  if (value instanceof Date) {
+    console.log(value.toUTCString());
+  } else {
+    console.log(value.toUpperCase());
+  }
+}
+
+// type Fish = { swim: () => void };
+// type Bird = { fly: () => void };
+function isFish(pet: Fish | Bird): pet is Fish {
+  return (pet as Fish).swim !== undefined;
+}
+
+function getFood(pet: Fish | Bird) {
+  if (isFish(pet)) {
+    pet;
+    return "fish food";
+  }
+  pet;
+  return "bird food";
+}
